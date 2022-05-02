@@ -3,11 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import TodoList from "./TodoList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+const groceryStore = {
+    id: 1,
+    title: "Grocery Store",
+};
+const cleanKitchen = {
+    id: 2,
+    title: "Clean Kitchen",
+};
+const todos = [groceryStore, cleanKitchen];
 root.render(
     <React.StrictMode>
-        <App />
+        <TodoList todos={todos} />
     </React.StrictMode>
 );
 
