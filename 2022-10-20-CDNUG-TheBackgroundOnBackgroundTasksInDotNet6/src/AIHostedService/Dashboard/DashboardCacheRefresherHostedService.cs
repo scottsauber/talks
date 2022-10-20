@@ -15,12 +15,13 @@ public class DashboardCacheRefresherHostedService : IHostedService
         _cacheService = cacheService;
     }
 
-    public async Task StartAsync(CancellationToken cancellationToken)
+    public Task StartAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Starting {jobName}", nameof(DashboardCacheRefresherHostedService));
         
-        await RefreshCacheAsync(cancellationToken);
-        
+        RefreshCacheAsync(cancellationToken);
+
+        return Task.CompletedTask;
     }
         
     private async Task RefreshCacheAsync(CancellationToken stoppingToken)
