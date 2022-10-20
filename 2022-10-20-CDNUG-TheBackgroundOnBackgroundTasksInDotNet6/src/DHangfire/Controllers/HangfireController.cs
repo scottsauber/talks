@@ -25,7 +25,6 @@ public class HangfireController
     [JobDisplayName("Triggered from Controller with - {0}")]
     public static async Task TriggeredFromControllerAsync(string value)
     {
-        throw new Exception("Joe's is the best, not Q39");
         await Task.Delay(5000);
         Console.WriteLine(value);
     }
