@@ -6,6 +6,9 @@ Every talk has a pdf and/or pptx with the contents of the slides. Some have a RE
 
 | Talk                                                    | Where                       | When       |
 | ------------------------------------------------------- | --------------------------- | ---------- |
+| Docker for Databases                                    | PASS Summit                 | 2022-11-15 |
+| The Background on Background Tasks in .NET 6            | JetBrains .NET Days         | 2022-10-26 |
+| The Background on Background Tasks in .NET 6            | Chicago .NET User Group     | 2022-10-20 |
 | The Background on Background Tasks in .NET 6            | KCDC                        | 2022-08-10 |
 | DevOps For Databases                                    | Twin Cities .NET User Group | 2022-06-01 |
 | DevOps For Databases                                    | NDC London                  | 2022-05-11 |
