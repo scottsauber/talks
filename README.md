@@ -6,6 +6,7 @@ Every talk has a pdf and/or pptx with the contents of the slides. Some have a RE
 
 | Talk                                                    | Where                       | When       |
 | ------------------------------------------------------- | --------------------------- | ---------- |
+| Docker for Databases                                    | Iowa Data Professionals     | 2022-12-22 |
 | Docker for Databases                                    | PASS Summit                 | 2022-11-15 |
 | The Background on Background Tasks in .NET 6            | JetBrains .NET Days         | 2022-10-26 |
 | The Background on Background Tasks in .NET 6            | Chicago .NET User Group     | 2022-10-20 |
