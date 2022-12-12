@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  sql:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    ports:
+      - "1434:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Password#123"
+  sql-2019:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    ports:
+      - "1435:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Password#123"
