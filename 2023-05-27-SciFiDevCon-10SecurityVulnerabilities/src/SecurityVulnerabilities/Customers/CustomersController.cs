@@ -23,8 +23,8 @@ public class CustomersController : ControllerBase
                               first_name as FirstName, 
                               last_name as LastName 
                        FROM customers 
-                       WHERE id='{id}'";
+                       WHERE id=@id";
 
-        return _dbConnection.QueryFirst<Customer>(query);
+        return _dbConnection.QueryFirst<Customer>(query, new {id});
     }
 }

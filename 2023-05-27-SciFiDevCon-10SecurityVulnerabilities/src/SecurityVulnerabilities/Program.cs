@@ -34,7 +34,7 @@ app.Run();
 NpgsqlConnection CreatePostgresConnection()
 {
     return new NpgsqlConnection(
-        connectionString: "Server=localhost;Port=5433;User Id=postgres;Password=postgres;Database=a_site_to_order_stuff_local;");
+        connectionString: builder.Configuration.GetConnectionString("Postgres"));
 }
 
 void SeedData()
@@ -42,18 +42,28 @@ void SeedData()
     var postgresConnection = CreatePostgresConnection();
 
     var spongeBobId = Guid.Parse("63142066-CB99-462E-907E-9EE6076715E7");
-    InsertIfMissing(postgresConnection, spongeBobId, "Spongebob", "Squarepants");
-    
+    InsertCustomerIfMissing(postgresConnection, spongeBobId, "Spongebob", "Squarepants");
+
     var scoobyDooId = Guid.Parse("A27B68A5-33B1-464C-85DB-F9F5FFC3E841");
-    InsertIfMissing(postgresConnection, scoobyDooId, "Scooby", "Doo");
+    InsertCustomerIfMissing(postgresConnection, scoobyDooId, "Scooby", "Doo");
+    InsertDocumentIfMissing(postgresConnection);
 }
 
-void InsertIfMissing(NpgsqlConnection npgsqlConnection, Guid guid, string firstName, string LastName)
+void InsertCustomerIfMissing(NpgsqlConnection dbConnection, Guid guid, string firstName, string LastName)
 {
-    if (npgsqlConnection.QueryFirstOrDefault<Customer>("SELECT * FROM customers WHERE id=@id", new { id = guid }) ==
-        null)
+    if (dbConnection.QueryFirstOrDefault<Customer>("SELECT * FROM customers WHERE id=@id", new { id = guid })
+        == null)
     {
         var insertSql = "INSERT INTO customers (id, first_name, last_name) VALUES (@Id, @FirstName, @LastName)";
-        npgsqlConnection.Execute(insertSql, new { Id = guid, FirstName = firstName, LastName = LastName });
+        dbConnection.Execute(insertSql, new { Id = guid, FirstName = firstName, LastName = LastName });
+    }
+}
+
+void InsertDocumentIfMissing(NpgsqlConnection dbConnection)
+{
+    var count = dbConnection.ExecuteScalar<int>("SELECT COUNT(*) FROM documents");
+    if (count == 0)
+    {
+        dbConnection.Execute("INSERT INTO documents (file_path) VALUES ('Documents\\SomeFile.txt')");
     }
 }
