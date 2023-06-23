@@ -16,15 +16,16 @@ public class DocumentsController : ControllerBase
     }
     
     [HttpGet]
-    public string GetFile(string fileName)
+    public string GetFile(string id)
     {
-        return System.IO.File.ReadAllText(Path.Combine("Documents", fileName));
+        var filePath = GetFilePathById(Guid.Parse(id));
+        return System.IO.File.ReadAllText(filePath);
     }
 
     [HttpPost]
     public IActionResult CreateFile([FromBody] CreateFileRequest request)
     {
-        System.IO.File.WriteAllText(Path.Combine("Documents", Guid.NewGuid().ToString()), request.TextContents);
+        System.IO.File.WriteAllText(Path.Combine("Documents", $"{Guid.NewGuid()}.txt"), request.TextContents);
         return StatusCode(StatusCodes.Status201Created);
     }
     
