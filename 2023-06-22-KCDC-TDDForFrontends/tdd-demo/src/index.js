@@ -16,9 +16,7 @@ const cleanKitchen = {
 };
 const todos = [groceryStore, cleanKitchen];
 root.render(
-    <React.StrictMode>
-        <TodoList todos={todos} />
-    </React.StrictMode>
+    <React.StrictMode>{/*<TodoList todos={todos} />*/}</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
