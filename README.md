@@ -6,6 +6,15 @@ Every talk has a pdf and/or pptx with the contents of the slides. Some have a RE
 
 | Talk                                                    | Where                       | When       |
 | ------------------------------------------------------- | --------------------------- | ---------- |
+| TDD with Blazor                                         | JetBrains Webinar           | 2023-11-09 |
+| TDD with C# - Padawan to Jedi                           | NDC Porto                   | 2023-10-18 |
+| HTTP Security Headers You Need To Have On Your Web Apps | MDC                         | 2023-10-03 |
+| DevOps for Databases                                    | DevOps Days DSM             | 2023-09-07 |
+| TDD for Frontends                                       | KCDC                        | 2023-06-22 |
+| 10 Things I Do In Every .NET App                        | Iowa Code Camp              | 2023-06-17 |
+| Creating a Healthy, High Performing Engineering Org     | Iowa Code Camp              | 2023-06-17 |
+| 10 Vulnerabilities Your Web App Probably Has Right Now  | SciFiDevCon                 | 2023-05-27 |
+| Creating a Healthy, High Performing Engineering Org     | SciFiDevCon                 | 2023-05-04 |
 | Docker for Databases                                    | Iowa Data Professionals     | 2022-12-22 |
 | Blazor Workshop                                         | Iowa .NET User Group        | 2022-11-17 |
 | Docker for Databases                                    | PASS Summit                 | 2022-11-15 |
