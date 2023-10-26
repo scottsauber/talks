@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: postgres
+    image: postgres:13.6-alpine
+    environment:
+      - POSTGRES_DB=a_site_to_order_stuff_local
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5433:5432"
+
+  flyway:
+    container_name: flyway
+    image: "flyway/flyway:8.5-alpine"
+    command: -url=jdbc:postgresql://db:5432/a_site_to_order_stuff_local -user=postgres -password=postgres -connectRetries=60 migrate
+    volumes:
+      - ./sql/:/flyway/sql
+    depends_on:
+      - db
