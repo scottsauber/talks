@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="bunit.web" Version="1.24.10" />
+      <PackageReference Include="Microsoft.AspNetCore.Components" Version="7.0.13" />
+    </ItemGroup>
+
+</Project>

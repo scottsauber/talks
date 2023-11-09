@@ -1,0 +1,25 @@
+﻿@page "/LoanApplication"
+
+@if (Message != null)
+{
+    <div class="alert alert-success" id="message">@Message</div>
+}
+
+<EditForm Model="@LoanApplicationCommand" OnValidSubmit="@SubmitForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText @bind-Value="LoanApplicationCommand.FirstName" id="first-name" />
+    <InputText @bind-Value="LoanApplicationCommand.LastName" id="last-name"/>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    public LoanApplicationCommand LoanApplicationCommand { get; set; } = new();
+    private string? Message { get; set; }
+
+    private void SubmitForm()
+    {
+        Message = "Thank you for submitting!";
+        // Call the API
+    }
+}
