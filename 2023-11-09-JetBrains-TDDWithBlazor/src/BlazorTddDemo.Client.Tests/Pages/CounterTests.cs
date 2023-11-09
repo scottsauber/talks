@@ -1,8 +1,8 @@
 using Bunit;
-using Counter = BlazorTddDemo.Client.Pages.Counter;
 using FluentAssertions;
+using Counter = BlazorTddDemo.Client.Pages.Counter;
 
-namespace BlazorTddDemo.Client.Tests;
+namespace BlazorTddDemo.Client.Tests.Pages;
 
 [UsesVerify]
 public class CounterTests
