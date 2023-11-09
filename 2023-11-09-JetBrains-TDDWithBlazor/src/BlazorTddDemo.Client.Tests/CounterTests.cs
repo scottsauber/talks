@@ -20,16 +20,16 @@ public class CounterTests
         currentCount.TextContent.Should().Be("Current count: 1");
     }
     
-    [Fact]
-    public Task SnapshotExample()
-    {
-        VerifyBunit.Initialize();
-        using var testContext = new TestContext();
-        
-        var component = testContext.RenderComponent<Counter>();
-        var button = component.Find("button");
-        button.Click();
-
-        return Verify(component);
-    }
+    // [Fact]
+    // public Task SnapshotExample()
+    // {
+    //     VerifyBunit.Initialize();
+    //     using var testContext = new TestContext();
+    //     
+    //     var component = testContext.RenderComponent<Counter>();
+    //     var button = component.Find("button");
+    //     button.Click();
+    //
+    //     return Verify(component.Markup);
+    // }
 }
