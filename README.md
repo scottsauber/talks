@@ -6,7 +6,8 @@ Every talk has a pdf and/or pptx with the contents of the slides. Some have a RE
 
 | Talk                                                    | Where                       | When       |
 | ------------------------------------------------------- | --------------------------- | ---------- |
-| 10 Opinions For More Maintainable .NET Apps             | NDC Sydney                  | 2024-02-16 |
+| 10 Opinions For More Maintainable .NET Apps             | NDC Sydney                  | 2024-02-14 |
+| HTTP Security Headers You Need To Have On Your Web Apps | Twin Cities .NET User Group | 2024-01-04 |
 | Workshop: .NET 8, Azure, Bicep, GitHub Actions          | Iowa .NET User Group        | 2023-12-07 |
 | TDD with Blazor                                         | JetBrains Webinar           | 2023-11-09 |
 | TDD with C# - Padawan to Jedi                           | NDC Porto                   | 2023-10-18 |
