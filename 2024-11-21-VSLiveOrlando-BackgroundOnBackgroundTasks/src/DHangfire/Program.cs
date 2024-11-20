@@ -34,12 +34,12 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHangfireDashboard();
 
-RecurringJob.AddOrUpdate(
+RecurringJob.AddOrUpdate("Inline Method",
     () => Console.WriteLine("Inline method recurring every minute!"),
     Cron.Minutely);
 
-RecurringJob.AddOrUpdate(
-    () => app.Services.GetRequiredService<IJobService>().JobWithNameAsync(),
+RecurringJob.AddOrUpdate("Custom Job Name",
+    () => app.Services.GetRequiredService<IJobService>().ExternalJob(),
     Cron.Minutely
 );
 

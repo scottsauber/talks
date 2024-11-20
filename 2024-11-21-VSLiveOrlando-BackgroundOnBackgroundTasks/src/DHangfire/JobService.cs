@@ -4,13 +4,12 @@ namespace DHangfire;
 
 public interface IJobService
 {
-    Task JobWithNameAsync();
+    Task ExternalJob();
 }
 
 public class JobService : IJobService
 {
-    [JobDisplayName("Custom Job Name")]
-    public async Task JobWithNameAsync()
+    public async Task ExternalJob()
     {
         await Task.Delay(5000);
         Console.WriteLine("Named method recurring every minute!");
