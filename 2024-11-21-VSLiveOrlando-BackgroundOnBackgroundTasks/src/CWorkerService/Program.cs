@@ -1,13 +1,9 @@
 using CWorkerService;
 
-var host = Host.CreateDefaultBuilder(args)
-    .UseWindowsService() // Microsoft.Extensions.Hosting.WindowsService
-    .UseSystemd() // Microsoft.Extensions.Hosting.Systemd
-    .ConfigureServices((_, services) =>
-    {
-        services.AddHostedService<Worker>();
-        services.AddDemoServices();
-    })
-    .Build();
-    
+var builder = Host.CreateApplicationBuilder(args);
+builder.Services.AddHostedService<Worker>();
+builder.Services.AddDemoServices();
+
+var host = builder.Build();
+
 await host.RunAsync();
