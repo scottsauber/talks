@@ -11,17 +11,8 @@ public interface ICacheService
     void RemoveDashboardCache();
 }
 
-public class CacheService : ICacheService
+public class CacheService(IDistributedCache cache, ILogger<CacheService> logger) : ICacheService
 {
-    private readonly IDistributedCache _cache;
-    private readonly ILogger<CacheService> _logger;
-
-    public CacheService(IDistributedCache cache, ILogger<CacheService> logger)
-    {
-        _cache = cache;
-        _logger = logger;
-    }
-        
     public async Task RefreshDashboardCacheAsync()
     {
         var rng = Random.Shared;
@@ -33,13 +24,13 @@ public class CacheService : ICacheService
         };
         var encodedDashboard = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(dashboardResult));
 
-        await _cache.SetAsync(CacheKeys.Dashboard, encodedDashboard, new DistributedCacheEntryOptions());
+        await cache.SetAsync(CacheKeys.Dashboard, encodedDashboard, new DistributedCacheEntryOptions());
 
-        _logger.LogInformation("{cacheKey} cache refreshed", CacheKeys.Dashboard);
+        logger.LogInformation("{cacheKey} cache refreshed", CacheKeys.Dashboard);
     }
 
     public void RemoveDashboardCache()
     {
-        _cache.Remove(CacheKeys.Dashboard);
+        cache.Remove(CacheKeys.Dashboard);
     }
 }
