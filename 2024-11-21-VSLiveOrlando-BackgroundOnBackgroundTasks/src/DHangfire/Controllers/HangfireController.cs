@@ -6,19 +6,12 @@ namespace DHangfire.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class HangfireController
+public class HangfireController(IBackgroundJobClient backgroundJobClient)
 {
-    private readonly IBackgroundJobClient _backgroundJobClient;
-
-    public HangfireController(IBackgroundJobClient backgroundJobClient)
-    {
-        _backgroundJobClient = backgroundJobClient;
-    }
-        
     [HttpGet]
     public void Trigger()
     {
-        _backgroundJobClient.Enqueue(
+        backgroundJobClient.Enqueue(
             () => TriggeredFromControllerAsync("Hello from the Controller!"));
     }
 

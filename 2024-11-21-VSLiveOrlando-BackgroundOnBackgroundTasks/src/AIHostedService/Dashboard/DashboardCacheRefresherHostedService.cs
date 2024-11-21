@@ -4,20 +4,11 @@ using Shared;
 
 namespace AIHostedService.Dashboard;
 
-public class DashboardCacheRefresherHostedService : IHostedService
+public class DashboardCacheRefresherHostedService(ILogger<DashboardCacheRefresherHostedService> logger, ICacheService cacheService) : IHostedService
 {
-    private readonly ILogger<DashboardCacheRefresherHostedService> _logger;
-    private readonly ICacheService _cacheService;
-
-    public DashboardCacheRefresherHostedService(ILogger<DashboardCacheRefresherHostedService> logger, ICacheService cacheService)
-    {
-        _logger = logger;
-        _cacheService = cacheService;
-    }
-
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Starting {jobName}", nameof(DashboardCacheRefresherHostedService));
+        logger.LogInformation("Starting {jobName}", nameof(DashboardCacheRefresherHostedService));
         
         RefreshCacheAsync(cancellationToken);
 
@@ -30,11 +21,11 @@ public class DashboardCacheRefresherHostedService : IHostedService
         {
             try
             {
-                await _cacheService.RefreshDashboardCacheAsync();
+                await cacheService.RefreshDashboardCacheAsync();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Job {jobName} threw an exception", nameof(DashboardCacheRefresherHostedService));
+                logger.LogError(ex, "Job {jobName} threw an exception", nameof(DashboardCacheRefresherHostedService));
             }
 
             await Task.Delay(5000, stoppingToken);
@@ -43,10 +34,10 @@ public class DashboardCacheRefresherHostedService : IHostedService
 
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Stopping {jobName}", nameof(DashboardCacheRefresherHostedService));
+        logger.LogInformation("Stopping {jobName}", nameof(DashboardCacheRefresherHostedService));
 
         // Perform any cleanup here
-        _cacheService.RemoveDashboardCache();
+        cacheService.RemoveDashboardCache();
 
         return Task.CompletedTask;
     }

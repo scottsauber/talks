@@ -2,17 +2,11 @@ using Shared;
 
 namespace BBackgroundService.Dashboard;
 
-public class DashboardCacheRefresherBackgroundService : BackgroundService
+public class DashboardCacheRefresherBackgroundService(ILogger<DashboardCacheRefresherBackgroundService> logger, ICacheService cacheService) : BackgroundService
 {
-    private readonly ILogger<DashboardCacheRefresherBackgroundService> _logger;
-    private readonly ICacheService _cacheService;
+    private readonly ILogger<DashboardCacheRefresherBackgroundService> _logger = logger;
+    private readonly ICacheService _cacheService = cacheService;
 
-    public DashboardCacheRefresherBackgroundService(ILogger<DashboardCacheRefresherBackgroundService> logger, ICacheService cacheService)
-    {
-        _logger = logger;
-        _cacheService = cacheService;
-    }
-   
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         // Job starts
