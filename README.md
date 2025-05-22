@@ -6,7 +6,11 @@ Every talk has a pdf and/or pptx with the contents of the slides. Some have a RE
 
 | Talk                                                                       | Where                       | When       |
 | -------------------------------------------------------------------------- | --------------------------- | ---------- |
-| GitHub Actions: Zero to Hero                                               | CodeMash                    | 2025-01-14 |
+| The 10 Most Common Azure Mistakes (and how to fix them)                    | CodeMash                    | 2025-09-10 |
+| The 10 Most Common Azure Mistakes (and how to fix them)                    | KCDC                        | 2025-08-13 |
+| GitHub Actions: From Zero to Hero Workshop                                 | KCDC                        | 2025-08-13 |
+| 10 Things I Do On Every .NET App                                           | NDC Oslo                    | 2025-05-22 |
+| GitHub Actions: Zero to Hero Workshop                                      | CodeMash                    | 2025-01-14 |
 | .NET Aspire: Not just for cloud native distributed systems                 | Hot Topics Developer Group  | 2024-12-03 |
 | The Background on Background Tasks in .NET 9                               | Visual Studio Live Orlando  | 2024-11-21 |
 | Building And Deploying a .NET 9 App Using Azure, Bicep, and GitHub Actions | Visual Studio Live Orlando  | 2024-11-18 |
