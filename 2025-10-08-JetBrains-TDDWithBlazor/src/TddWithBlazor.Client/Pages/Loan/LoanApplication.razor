@@ -1,0 +1,26 @@
+﻿@page "/LoanApplication"
+@rendermode InteractiveWebAssembly
+
+@if (Message != null)
+{
+    <div class="alert alert-success" id="message">@Message</div>
+}
+
+<EditForm FormName="loan-application" Model="@LoanApplicationCommand" OnValidSubmit="@SubmitForm" Enhance="false">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText @bind-Value="LoanApplicationCommand.FirstName" id="first-name" placeholder="First Name"  />
+    <InputText @bind-Value="LoanApplicationCommand.LastName" id="last-name" placeholder="Last Name"/>
+    <button type="submit">Submit</button>
+</EditForm>
+
+@code {
+    public LoanApplicationCommand LoanApplicationCommand { get; set; } = new();
+    private string? Message { get; set; }
+
+    private void SubmitForm()
+    {
+        Message = $"Thank you for submitting {LoanApplicationCommand.FullName}!";
+        LoanApplicationCommand = new();
+    }
+}

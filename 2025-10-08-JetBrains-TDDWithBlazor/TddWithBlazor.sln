@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddWithBlazor", "src\TddWithBlazor\TddWithBlazor.csproj", "{A754D6F5-6E8A-4384-801A-A8F6B8DE848B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddWithBlazor.Client", "src\TddWithBlazor.Client\TddWithBlazor.Client.csproj", "{2C51C215-31A3-476A-ABA1-EA4357B25E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TddWithBlazor.Tests", "src\TddWithBlazor.Tests\TddWithBlazor.Tests.csproj", "{C9220D62-3F9D-4C98-BC30-ECA86D857977}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A754D6F5-6E8A-4384-801A-A8F6B8DE848B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A754D6F5-6E8A-4384-801A-A8F6B8DE848B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A754D6F5-6E8A-4384-801A-A8F6B8DE848B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A754D6F5-6E8A-4384-801A-A8F6B8DE848B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C51C215-31A3-476A-ABA1-EA4357B25E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C51C215-31A3-476A-ABA1-EA4357B25E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C51C215-31A3-476A-ABA1-EA4357B25E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C51C215-31A3-476A-ABA1-EA4357B25E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9220D62-3F9D-4C98-BC30-ECA86D857977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9220D62-3F9D-4C98-BC30-ECA86D857977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9220D62-3F9D-4C98-BC30-ECA86D857977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9220D62-3F9D-4C98-BC30-ECA86D857977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
