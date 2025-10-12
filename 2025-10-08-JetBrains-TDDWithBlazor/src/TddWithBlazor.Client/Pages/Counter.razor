@@ -1,10 +1,14 @@
-﻿<p id="current-count">Current count: @_currentCount</p>
+﻿@page "/counter"
+
+@rendermode InteractiveWebAssembly
+
+<p id="current-count">Current count: @_currentCount</p>
 
 <button @onclick="Increment">Increment</button>
 
 @code {
     private int _currentCount;
-    
+
     private void Increment()
     {
         _currentCount++;
