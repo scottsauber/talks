@@ -4,12 +4,12 @@ using TddWithBlazor.Client.Pages;
 
 namespace TddWithBlazor.Tests.Final;
 
-public class FinalCounterTests : TestContext
+public class FinalCounterTests : BunitContext
 {
     [Fact]
     public void ShouldHaveAnInitialCountOfZeroWhenComponentLoads()
     {
-        var component = RenderComponent<Counter>();
+        var component = Render<Counter>();
         
         var countDisplay = component.Find("#current-count");
         countDisplay.TextContent.ShouldBe("Current count: 0");
@@ -18,7 +18,7 @@ public class FinalCounterTests : TestContext
     [Fact]
     public void ShouldIncrementCurrentCountWhenIncrementButtonIsClicked()
     {
-        var component = RenderComponent<Counter>();
+        var component = Render<Counter>();
         
         var currentCount = component.Find("#current-count");
         var incrementButton = component.Find("button");

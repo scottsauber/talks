@@ -4,13 +4,12 @@ using TddWithBlazor.Client.Pages.Loan;
 
 namespace TddWithBlazor.Tests.Pages.Loan;
 
-public class LoanApplicationTests
+public class LoanApplicationTests : BunitContext
 {
     [Fact]
     public void ShouldShowValidationErrorWhenFirstNameIsNull()
     {
-        using var context = new TestContext();
-        var component = context.RenderComponent<LoanApplication>();
+        var component = Render<LoanApplication>();
 
         component.FindAll("#message").ShouldBeEmpty();
 

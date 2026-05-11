@@ -8,14 +8,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="bunit" Version="1.40.0" />
-        <PackageReference Include="bunit.web" Version="1.40.0" />
-        <PackageReference Include="bunit.web.query" Version="1.40.0" />
-        <PackageReference Include="coverlet.collector" Version="6.0.2"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
+        <PackageReference Include="bunit" Version="2.7.2" />
+        <PackageReference Include="bunit.web.query" Version="2.7.2" />
+        <PackageReference Include="coverlet.collector" Version="10.0.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.5.1" />
         <PackageReference Include="Shouldly" Version="4.3.0" />
-        <PackageReference Include="xunit" Version="2.9.2"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"/>
+        <PackageReference Include="xunit.v3" Version="3.2.2" />
     </ItemGroup>
 
     <ItemGroup>
