@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/TddWithBlazor.Client/TddWithBlazor.Client.csproj" />
+  <Project Path="src/TddWithBlazor.Tests/TddWithBlazor.Tests.csproj" />
+  <Project Path="src/TddWithBlazor/TddWithBlazor.csproj" />
+</Solution>
