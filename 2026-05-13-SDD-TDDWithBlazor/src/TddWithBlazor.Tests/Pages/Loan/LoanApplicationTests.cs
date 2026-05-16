@@ -7,7 +7,7 @@ namespace TddWithBlazor.Tests.Pages.Loan;
 public class LoanApplicationTests : BunitContext
 {
     [Fact]
-    public void ShouldShowValidationErrorWhenFirstNameIsNull()
+    public void ShouldShowMessageWhenFirstNameAndLastNameAreValidAndSubmitButtonIsClicked()
     {
         var component = Render<LoanApplication>();
 
